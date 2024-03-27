@@ -6,19 +6,24 @@
  */
 
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
+import Menu from '../components/Menu';
+import Sections from '../components/Sections';
 
 function Homepage(): React.JSX.Element {
   return (
-    <View>
-      <Text style={styles.text}>Hello World!</Text>
+    <View style={styles.pageContainer}>
+      <Menu />
+      <Sections />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  text: {
-    fontSize: 100,
+  pageContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: 'blue',
   },
 });
 
