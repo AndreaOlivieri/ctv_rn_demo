@@ -34,3 +34,7 @@ pod install
       npm run ios
     ```
 
+# 3 - Create the homepage
+- 3.1 move the ```App.tsx``` in the ```src``` directory
+- 3.1 create the folder ```src``` and the ```Homepage.tsx```
+- 3.2 clear the ```App.tsx``` and link the ```Homepage.tsx```
