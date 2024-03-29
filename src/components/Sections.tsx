@@ -1,25 +1,42 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {FlatList, StyleSheet, View} from 'react-native';
+import SectionItem from './SectionItem';
+import {fetchSectionList} from '../providers/MovieProvider';
+import {TSection, TSectionList} from '../types/sectionsTypes';
+import {horizontalScale, verticalScale} from '../utils/screenHelper';
 
 function Sections(): React.JSX.Element {
+  const [sections, setSections] = useState<TSectionList>([]);
+
+  useEffect(() => {
+    fetchSectionList().then(newSections => {
+      setSections(newSections);
+    });
+  }, []);
+
   return (
     <View style={styles.sectionsContainer}>
-      <Text>Sections</Text>
+      <FlatList
+        horizontal={false}
+        data={sections}
+        renderItem={({item}: {item: TSection}) => {
+          return <SectionItem section={item} />;
+        }}
+        contentContainerStyle={styles.sectionListContainer}
+      />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   sectionsContainer: {
+    paddingTop: verticalScale(30),
+    paddingLeft: horizontalScale(30),
+    backgroundColor: '#f7f7f7',
+  },
+  sectionListContainer: {
     flexGrow: 1,
-    backgroundColor: 'green',
+    gap: verticalScale(50),
   },
 });
 
