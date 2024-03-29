@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, StyleSheet, TVFocusGuideView, View} from 'react-native';
+import {FlatList, StyleSheet, TVFocusGuideView} from 'react-native';
 import SectionItem from './SectionItem';
 import {fetchSectionList} from '../providers/MovieProvider';
 import {TSection, TSectionList} from '../types/sectionsTypes';
