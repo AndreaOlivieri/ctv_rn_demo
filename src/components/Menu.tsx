@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, StyleSheet, TVFocusGuideView} from 'react-native';
 import MenuItem from './MenuItem';
 import {horizontalScale, verticalScale} from '../utils/screenHelper';
 import {TMenuItem, TMenuItemList} from '../types/menuTypes';
@@ -19,7 +19,7 @@ const MENU_ITEMS: TMenuItemList = [
 
 function Menu(): React.JSX.Element {
   return (
-    <View style={styles.menuContainer}>
+    <TVFocusGuideView autoFocus style={styles.menuContainer}>
       <FlatList
         data={MENU_ITEMS}
         renderItem={({item}: {item: TMenuItem}) => {
@@ -27,7 +27,7 @@ function Menu(): React.JSX.Element {
         }}
         contentContainerStyle={styles.menuItemListContainer}
       />
-    </View>
+    </TVFocusGuideView>
   );
 }
 

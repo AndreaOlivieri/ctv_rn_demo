@@ -50,3 +50,4 @@ pod install
 
 # 6 - Adding Focus Styles
 - 6.1 Handling and Add Focus Style to ```MenuItem.tsx``` and ```MovieCard.tsx```
+- 6.2 Adding TVFocusGuideView to fix the focus problem with unaligned elements

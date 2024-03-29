@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, StyleSheet, TVFocusGuideView, View} from 'react-native';
 import SectionItem from './SectionItem';
 import {fetchSectionList} from '../providers/MovieProvider';
 import {TSection, TSectionList} from '../types/sectionsTypes';
@@ -15,7 +15,7 @@ function Sections(): React.JSX.Element {
   }, []);
 
   return (
-    <View style={styles.sectionsContainer}>
+    <TVFocusGuideView autoFocus style={styles.sectionsContainer}>
       <FlatList
         horizontal={false}
         data={sections}
@@ -24,7 +24,7 @@ function Sections(): React.JSX.Element {
         }}
         contentContainerStyle={styles.sectionListContainer}
       />
-    </View>
+    </TVFocusGuideView>
   );
 }
 
