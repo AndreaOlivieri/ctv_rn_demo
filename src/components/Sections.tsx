@@ -30,13 +30,14 @@ function Sections(): React.JSX.Element {
 
 const styles = StyleSheet.create({
   sectionsContainer: {
-    paddingTop: verticalScale(30),
-    paddingLeft: horizontalScale(30),
     backgroundColor: '#f7f7f7',
   },
   sectionListContainer: {
     flexGrow: 1,
     gap: verticalScale(50),
+    paddingLeft: horizontalScale(30),
+    paddingTop: verticalScale(30),
+    paddingBottom: verticalScale(30),
   },
 });
 
