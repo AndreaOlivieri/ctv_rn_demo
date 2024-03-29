@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {FlatList, StyleSheet} from 'react-native';
+import {FlatList, StyleSheet, View} from 'react-native';
 import MenuItem from './MenuItem';
 import {verticalScale} from '../utils/screenHelper';
 import {TMenuItem, TMenuItemList} from '../types/menuTypes';
@@ -19,21 +19,25 @@ const MENU_ITEMS: TMenuItemList = [
 
 function Menu(): React.JSX.Element {
   return (
-    <FlatList
-      data={MENU_ITEMS}
-      renderItem={({item}: {item: TMenuItem}) => {
-        return <MenuItem item={item} />;
-      }}
-      contentContainerStyle={styles.menuContainer}
-    />
+    <View style={styles.menuContainer}>
+      <FlatList
+        data={MENU_ITEMS}
+        renderItem={({item}: {item: TMenuItem}) => {
+          return <MenuItem item={item} />;
+        }}
+        contentContainerStyle={styles.menuItemListContainer}
+      />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   menuContainer: {
-    gap: verticalScale(20),
-    flex: 1,
+    height: '100%',
     justifyContent: 'center',
+  },
+  menuItemListContainer: {
+    gap: verticalScale(20),
   },
 });
 
