@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   movieListContainer: {
     gap: horizontalScale(40),
-    paddingRight: horizontalScale(1000),
+    paddingRight: horizontalScale(1500),
   },
   sectionItemTitle: {
     fontFamily: 'Metropolis-Medium',
