@@ -47,3 +47,6 @@ pod install
 # 5 - Develop the Sections component
 - 5.1 Add the ```MovieProvider.ts``` to fetch data for the movie sections and add ```sectionsTypes.ts``` to save the relative types
 - 5.2 Develop the ```MovieCard.tsx```, ```SectionItem.tsx``` and ```Sections.tsx```
+
+# 6 - Adding Focus Styles
+- 6.1 Handling and Add Focus Style to ```MenuItem.tsx``` and ```MovieCard.tsx```

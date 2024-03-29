@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import {horizontalScale, verticalScale} from '../utils/screenHelper';
 import {TMenuItem} from '../types/menuTypes';
@@ -10,6 +10,10 @@ const styles = StyleSheet.create({
     borderRadius: verticalScale(30),
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  itemContainerFocused: {
+    borderColor: '#35b1ff',
+    backgroundColor: '#c6e9ff',
   },
   itemInnerWrapper: {
     flex: 1,
@@ -26,6 +30,9 @@ const styles = StyleSheet.create({
     lineHeight: verticalScale(36),
     letterSpacing: horizontalScale(0.5),
     color: '#FAFAFA',
+  },
+  itemTextFocused: {
+    color: 'black',
   },
 });
 
@@ -44,14 +51,24 @@ export default function MenuItem(props: TMenuItemProps): React.JSX.Element {
     onBlur = () => {},
   } = props;
 
+  const [focused, setFocused] = useState(false);
+
   return (
     <Pressable
       onPress={onPress}
-      onFocus={onFocus}
-      onBlur={onBlur}
-      style={styles.itemContainer}>
+      onFocus={() => {
+        setFocused(true);
+        onFocus(item);
+      }}
+      onBlur={() => {
+        setFocused(false);
+        onBlur(item);
+      }}
+      style={[styles.itemContainer, focused && styles.itemContainerFocused]}>
       <View style={styles.itemInnerWrapper}>
-        <Text style={styles.itemText} numberOfLines={1}>
+        <Text
+          style={[styles.itemText, focused && styles.itemTextFocused]}
+          numberOfLines={1}>
           {item.label}
         </Text>
       </View>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import {horizontalScale, verticalScale} from '../utils/screenHelper';
 import {TMovie} from '../types/sectionsTypes';
@@ -11,6 +11,10 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: '#bcbcbc',
     backgroundColor: '#eaeaea',
+  },
+  movieContainerFocused: {
+    borderColor: '#35b1ff',
+    backgroundColor: '#c6e9ff',
   },
   movieInnerWrapper: {
     flex: 1,
@@ -43,9 +47,9 @@ const styles = StyleSheet.create({
 
 type TMovieCardProps = {
   movie: TMovie;
-  onPress?(item: any): void;
-  onFocus?(item: any, itemRef?: any): void;
-  onBlur?(item: any, itemRef?: any): void;
+  onPress?(movie: any): void;
+  onFocus?(movie: any, movieRef?: any): void;
+  onBlur?(movie: any, movieRef?: any): void;
 };
 
 export default function MovieCard(props: TMovieCardProps): React.JSX.Element {
@@ -56,12 +60,20 @@ export default function MovieCard(props: TMovieCardProps): React.JSX.Element {
     onBlur = () => {},
   } = props;
 
+  const [focused, setFocused] = useState(false);
+
   return (
     <Pressable
       onPress={onPress}
-      onFocus={onFocus}
-      onBlur={onBlur}
-      style={styles.movieContainer}>
+      onFocus={() => {
+        setFocused(true);
+        onFocus(movie);
+      }}
+      onBlur={() => {
+        setFocused(false);
+        onBlur(movie);
+      }}
+      style={[styles.movieContainer, focused && styles.movieContainerFocused]}>
       <View style={styles.movieInnerWrapper}>
         <Text style={styles.movieTitle} numberOfLines={1}>
           {movie.title}

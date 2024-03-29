@@ -8,7 +8,7 @@
 import React from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
 import MenuItem from './MenuItem';
-import {verticalScale} from '../utils/screenHelper';
+import {horizontalScale, verticalScale} from '../utils/screenHelper';
 import {TMenuItem, TMenuItemList} from '../types/menuTypes';
 
 const MENU_ITEMS: TMenuItemList = [
@@ -35,6 +35,8 @@ const styles = StyleSheet.create({
   menuContainer: {
     height: '100%',
     justifyContent: 'center',
+    paddingLeft: horizontalScale(10),
+    paddingRight: horizontalScale(10),
   },
   menuItemListContainer: {
     gap: verticalScale(20),
