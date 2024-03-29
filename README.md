@@ -38,3 +38,8 @@ pod install
 - 3.1 move the ```App.tsx``` in the ```src``` directory
 - 3.1 create the folder ```src``` and the ```Homepage.tsx```
 - 3.2 clear the ```App.tsx``` and link the ```Homepage.tsx```
+
+# 4 - Add Sections placeholder and develop Menu component
+- 4.1 Create the ```Sections.tsx``` and ```Menu.tsx``` components
+- 4.2 Introduce to horizontalScale and verticalScale utils to solve pixel ratio problem
+- 4.3 create the MenuItem.tsx component and add the code for rendering the menu

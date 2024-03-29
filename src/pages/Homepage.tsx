@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   pageContainer: {
     flex: 1,
     flexDirection: 'row',
-    backgroundColor: 'blue',
+    backgroundColor: 'black',
   },
 });
 
