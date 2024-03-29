@@ -42,7 +42,8 @@ pod install
 # 4 - Add Sections placeholder and develop Menu component
 - 4.1 Create the ```Sections.tsx``` and ```Menu.tsx``` components
 - 4.2 Introduce to horizontalScale and verticalScale utils to solve pixel ratio problem
-- 4.3 create the MenuItem.tsx component and add the code for rendering the menu
+- 4.3 create the ```MenuItem.tsx``` component and add the code for rendering the menu
 
 # 5 - Develop the Sections component
-- 5.1 Add the MovieProvider to fetch data for the movie sections
+- 5.1 Add the ```MovieProvider.ts``` to fetch data for the movie sections and add ```sectionsTypes.ts``` to save the relative types
+- 5.2 Develop the ```MovieCard.tsx```, ```SectionItem.tsx``` and ```Sections.tsx```
