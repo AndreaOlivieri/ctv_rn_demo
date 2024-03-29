@@ -43,3 +43,6 @@ pod install
 - 4.1 Create the ```Sections.tsx``` and ```Menu.tsx``` components
 - 4.2 Introduce to horizontalScale and verticalScale utils to solve pixel ratio problem
 - 4.3 create the MenuItem.tsx component and add the code for rendering the menu
+
+# 5 - Develop the Sections component
+- 5.1 Add the MovieProvider to fetch data for the movie sections
